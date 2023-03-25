@@ -62,3 +62,9 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color: #e9ecef;
 }
+.btn-table{
+  border: none;
+  background-color: #087f5b;
+  color: azure;
+  font-weight: bold;
+}

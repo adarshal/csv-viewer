@@ -1,22 +1,58 @@
 <link rel="stylesheet" href="/css/viewer.css">
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <div class="search-container">
 <input id="myInput" onkeyup="myFunction()" placeholder="type to search default by 1st column"> 
 <input type="number" id="colNumber" placeholder="Enter Column number to search">
 <input type="button" id="myBtn" onclick="myFunction(colNumber.value)" value="Search by this column number">
 </div>
 <table id="myTable">
-
-
-    <% data.forEach(function(row, index) { %>
+  <thead>
       <tr>
-        <% row.forEach(function(cell, i) { %>
-          <% if (index === 0) { %>
-            <th><%= cell %></th>
-          <% } else { %>
-            <td><%= cell %></td>
-          <% } %>
-        <% }); %>
+          <% data[0].forEach(function(cell, i) { %>
+              <th><button data-column="<%= i %>" data-sort="asc" class="btn-table">Sort By <%= cell %></button></th>
+          <% }); %>
       </tr>
-    <% }); %>
-  </table>
+  </thead>
+  <tbody>
+      <% data.slice(1).forEach(function(row, index) { %>
+          <tr>
+              <% row.forEach(function(cell, i) { %>
+                  <td><%= cell %></td>
+              <% }); %>
+          </tr>
+      <% }); %>
+  </tbody>
+</table>
+<div class="paging_simple_numbers">
+  <span class="paginate_button previous disabled">Previous</span>
+  <span class="paginate_button current">1</span>
+  <span class="paginate_button next disabled">Next</span>
+</div>
+
+<script>
+  $(document).ready(function() {
+      $('#myTable').DataTable({
+          columnDefs: [{
+              targets: [0],
+              orderData: [0, 1]
+          }],
+          order: [[0, 'asc']],
+          searching: false,
+          paging: true,
+            pageLength: 50,
+          info: false
+      });
+
+      $('#myTable th button').on('click', function() {
+          var sortOrder = $(this).data('sort');
+          var columnIndex = $(this).data('column');
+
+          if (sortOrder == 'asc') {
+              $('#myTable').DataTable().order([columnIndex, 'asc']).draw();
+          } else {
+              $('#myTable').DataTable().order([columnIndex, 'desc']).draw();
+          }
+      });
+  });
+</script>
   <script src="/js/home.js"></script>
