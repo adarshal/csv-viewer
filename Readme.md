@@ -49,13 +49,17 @@ sign,signup for  user,
 create session, logout
 add csv files,
 view csv files as table
-search filter based on column 
+search filter based on column
+sort clumn
+pagination
 
 <br>
-![image](https://user-images.githubusercontent.com/89533221/227737452-9a4194f5-938f-486e-bdfd-e75801b99c61.png)
+![home page](https://user-images.githubusercontent.com/89533221/227739475-4c530eef-012b-43d2-9068-734d8012227a.JPG)
+
 <br> <h2>view files</h2>
 ![image](https://user-images.githubusercontent.com/89533221/227737513-4779caf4-ccc5-4159-9417-bf58af321e56.png)
 <h2> search filter </h2>
 ![image](https://user-images.githubusercontent.com/89533221/227737655-4684f701-56b1-424a-9dd4-2d676be954b9.png)
 
 ![search filter](https://user-images.githubusercontent.com/89533221/227737757-b820ac07-20cb-4f33-9590-2a1ffdfa0086.JPG)
+![search sort and pagination](https://user-images.githubusercontent.com/89533221/227739516-b5df0098-5357-48b6-9444-16673f17cffd.JPG)
