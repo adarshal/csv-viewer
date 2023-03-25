@@ -1,0 +1,46 @@
+header{
+  background-color: #136751;
+  color: azure;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+header div{
+  display: inline-block;
+}
+#head-container{
+  display:flex;
+  gap: 2em;
+}
+#head-logo{
+  margin-right: auto;
+  /* text-align: left; */
+  
+  font-weight: bolder;
+  font-size: 1.8rem;
+  margin-top: 0.3rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+#homeAnchor{
+    color:azure;
+    text-decoration: none;
+}
+ul{
+  /* display: flex; */
+  /* justify-content: flex-end; */
+  padding-right: 0.5rem;
+  /* position: fixed; */
+  
+}
+
+.header-li{
+  
+      display: inline-block;
+      list-style: none;
+      color: azure;
+      margin-top: 0.8rem;
+          }
+.header-li a{
+  color: azure;
+  text-decoration: none;
+}
+

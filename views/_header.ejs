@@ -1,0 +1,36 @@
+
+   
+
+<header>
+    <div id="head-container">
+    <div id="head-logo">
+        <a href='/' id="homeAnchor"> CSV VIEWER WEBAPP<a>
+</div>
+<ul>
+    <li class="header-li">
+        <a href="/">
+          HOME  </a>
+    </li>
+    <% if(locals.user){ %>
+        <li class="header-li">
+            <%= user.name %>
+        </li>
+        <li class="header-li">
+            <a href="/users/signout">
+              Sign Out </a>
+        </li>
+        
+        <% } else{ %>
+
+            <li class="header-li">
+                <a href="/users/signin">Signin</a>
+            </li>
+            <li class="header-li">
+                <a href="/users/signup"> Sign Up</a>
+            </li>
+            
+       <% } %>
+</ul>
+</div>
+</header>
+

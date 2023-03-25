@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/viewer.css">
+<div class="search-container">
+<input id="myInput" onkeyup="myFunction()" placeholder="type to search default by 1st column"> 
+<input type="number" id="colNumber" placeholder="Enter Column number to search">
+<input type="button" id="myBtn" onclick="myFunction(colNumber.value)" value="Search by this column number">
+</div>
+<table id="myTable">
+
+
+    <% data.forEach(function(row, index) { %>
+      <tr>
+        <% row.forEach(function(cell, i) { %>
+          <% if (index === 0) { %>
+            <th><%= cell %></th>
+          <% } else { %>
+            <td><%= cell %></td>
+          <% } %>
+        <% }); %>
+      </tr>
+    <% }); %>
+  </table>
+  <script src="/js/home.js"></script>

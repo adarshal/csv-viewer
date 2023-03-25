@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/home.css">
+<!-- 
+<h1>csv viewer Home page</h1> -->
+<h1> </h1> 
+<div id="home-container">
+    <% if (!locals.user){ %>
+<h1> Hi there Please signin to upload and view csv files</h1>
+<% } %>
+<% if (locals.user){ %>
+    <!-- <br>
+<p><a href="/users/profile/<%=locals.user.id %>">
+   Your profile <%= locals.user.accountHolder %>
+</a></p>
+<br> -->
+<div id="form-container">
+<form action="/upload/uploadFile" enctype="multipart/form-data" method="POST">
+    <input type="file" class="admin_input" id="myFile" name="myFile" />
+    <input class="admin_submit" type="submit" />
+  </form>
+</div>
+<hr>
+  <div class="list-container">
+    <ul>
+        <% for(file of files){ %>
+            
+        <%- include('_file') -%>
+            
+        <%} %>
+    </ul>
+</div>
+
+<% } %>
+
+</div>
+
+
